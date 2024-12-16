@@ -1,0 +1,145 @@
+{%extends "base.html"%}
+{%block title%}
+<title>Hakkımızda - İTÜ Kontrol ve Otomasyon Kulübü</title>
+{%endblock%}
+
+{%block link%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css')}}">
+{%endblock%}
+{%block body%}
+<body>
+    <div class="page-container">
+        <div class="content-wrapper">
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='logos/svg2.svg')}}" alt="İTÜ Kontrol ve Otomasyon Kulübü Logo">
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h1>Hakkımızda</h1>
+                    <p>İTÜ Kontrol ve Otomasyon Kulübü kurulmuş olduğu 2004 yılından bu yana başta Elektrik-Elektronik Fakültesi öğrencileri olmak üzere tüm İTÜ öğrencilerine hizmet vermektedir.</p>
+                    <p>Hedefimiz öncelikle teknolojik ilerlemenin gerisinde kalmayan yetkin mühendisleri ülkemize kazandırmaktır. Bu hedef doğrultusunda faaliyette bulunmakta olan kulübümüz eğitimler, teknik geziler, kariyer günleri, konferanslar, seminerler, sosyal aktiviteler ve büyük çapta organizasyonlar düzenlemektedir. Sağlanan birikimlerle de daha fazlası için emin adımlar atmaktadır.</p>
+                    <p>İTÜ Kontrol ve Otomasyon Kulübü'nde yapılan proje çalışmaları sayesinde hem öğrencilere teorik bilgilerini pratiğe çevirme şansı verilmiş olmakta hem de yapılan çalışmaların paylaşılmasıyla tüm kulüp üyelerine önemli bir bilgi aktarımı sağlanmış olmaktadır.</p>
+                    <p>İTÜ Kontrol ve Otomasyon Kulübü için bir diğer önemli hedef ise öğrenciler için sosyal ortamın geliştirilmesidir. Kulübümüz, üyeleri arasında kaynaşmayı sağlamak ve paylaşımı arttırmak amacıyla belirli aralıklarda sosyal etkinlikler düzenlemektedir. Üyelerimiz, İTÜ Kontrol ve Otomasyon Kulübü etkinliklerinde ve alt kollarında görev alarak, liderlik deneyimi kazanma, kişisel yeteneklerini geliştirme, disiplinler arası çalışmalarda tecrübe edinme imkânı bulur.</p>
+                </div>
+            </div>
+        </div>
+        <div class="team-section">
+            <h2>Ekip</h2>
+            <div class="team-row">
+                <div class="team-member">
+                    <img src="{{url_for('static', filename='images/burak.jpg')}}" alt="Mentör">
+                    <h3>Burak Özpoyraz</h3>
+                    <p>Mentör Hoca</p>
+                </div>
+                <div class="team-member">
+                    <img src="{{url_for('static', filename='images/tufan.png')}}" alt="Mentör">
+                    <h3>Tufan Kumbasar</h3>
+                    <p>Danışman Hoca</p>
+                </div>
+            </div>
+            <div class="team-row">
+                <div class="team-member">
+                    <img src="{{url_for('static', filename='images/kerem.jpg')}}" alt="Başkan">
+                    <h3>Kerem Orhun Ünal</h3>
+                    <p>Başkan</p>
+                </div>
+                <div class="team-member">
+                    <img src="{{url_for('static', filename='images/suzan.jpg')}}" alt="Başkan Yardımcısı">
+                    <h3>Suzan Aydın</h3>
+                    <p>Başkan Yardımcısı</p>
+                </div>
+            </div>
+            <div class="team-row">
+                <div class="team-member">
+                    <img src="{{url_for('static', filename='images/emir.jpg')}}" alt="Üye 1">
+                    <h3>Ali Emir Kaplan</h3>
+                    <p>Sponsorluk Koordinatörü</p>
+                </div>
+                <div class="team-member">
+                    <img src="{{url_for('static', filename='images/enbiya.jpg')}}" alt="Üye 2">
+                    <h3>Enbiya Çabuk</h3>
+                    <p>Bilişim Koordinatörü</p>
+                </div>
+                <div class="team-member">
+                    <img src="{{url_for('static', filename='images/kaan.jpg')}}" alt="Üye 3">
+                    <h3>Sami Kaan Tamer</h3>
+                    <p>Bilişim Koordinatörü</p>
+                </div>
+            </div>
+            <div class="team-row">
+                <div class="team-member">
+                    <img src="{{url_for('static', filename='images/omer.jpg')}}" alt="Üye 4">
+                    <h3>Ömer Bedir Ergün</h3>
+                    <p>Tanıtım Koordinatörü</p>
+                </div>
+                <div class="team-member">
+                    <img src="{{url_for('static', filename='images/sena.jpg')}}" alt="Üye 5">
+                    <h3>Sena Öztürk</h3>
+                    <p>Tanıtım Koordinatörü</p>
+                </div>
+                <div class="team-member">
+                    <img src="{{url_for('static', filename='images/sude.jpg')}}" alt="Üye 6">
+                    <h3>Sude Ergene</h3>
+                    <p>Etkinlik ve Organizasyon Koordinatörü</p>
+                </div>
+            </div>
+            <div class="team-row">
+                <div class="team-member">
+                    <img src="{{url_for('static', filename='images/saltuk.jpg')}}" alt="Üye 6">
+                    <h3>Saltuk Sarıoğlu</h3>
+                    <p>Etkinlik ve Organizasyon Koordinatörü</p>
+                </div>
+                <div class="team-member">
+                    <img src="{{url_for('static', filename='images/ataberk.jpg')}}" alt="Üye 4">
+                    <h3>Ata Berk Babayiğit</h3>
+                    <p>Eğitim ve Teknik Proje Koordinatörü</p>
+                </div>
+                <div class="team-member">
+                    <img src="{{url_for('static', filename='images/kubilay.jpg')}}" alt="Üye 5">
+                    <h3>Kubilay Tunçer</h3>
+                    <p>Eğitim ve Teknik Proje Koordinatörü</p>
+                </div>
+            </div>
+            <div class="team-row"> 
+                <div class="team-member">
+                    <img src="{{url_for('static', filename='images/efe.jpeg')}}" alt="Üye 6">
+                    <h3>Hüseyin Efe Hacıhasanoğlu</h3>
+                    <p>Eğitim ve Teknik Proje Koordinatörü</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            let indicatorHidden = false;
+            
+            window.addEventListener('scroll', function() {
+                if (indicatorHidden) return;
+
+                const scrollPosition = window.scrollY;
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                
+                if (scrollPosition + windowHeight >= documentHeight - 100) {
+                    scrollIndicator.style.opacity = '0';
+                    indicatorHidden = true;
+                    setTimeout(() => {
+                        scrollIndicator.style.display = 'none';
+                    }, 300);
+                } else {
+                    scrollIndicator.style.opacity = '1';
+                }
+            });
+        });
+    </script>
+</body>
+{%endblock%}

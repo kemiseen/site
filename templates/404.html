@@ -1,0 +1,20 @@
+{%extends "base.html"%}
+{%block title%}404 - Sayfa Bulunamadı{%endblock%}
+{%block link%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/404.css')}}">
+{%endblock%}
+{%block body%}
+<body>
+    <div class="error-container">
+        <i class="fas fa-exclamation-triangle error-icon"></i>
+        <h1>404 - Sayfa Bulunamadı</h1>
+        <p>Üzgünüz, aradığınız sayfa bulunamadı.</p>
+        <a href="landing_page.html">Ana Sayfaya Dön</a>
+    </div>
+    <script src="{{ url_for('static', filename='js/footerheader.js')}}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        });
+    </script>
+</body>
+{%endblock%}

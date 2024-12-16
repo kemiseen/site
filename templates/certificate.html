@@ -1,0 +1,17 @@
+{%extends "base.html"%}
+{%block title%}
+<title>Sertifikalar</title>
+{%endblock%}
+
+{%block link%}
+<link rel="stylesheet" href="{{url_for('static', filename='css/certificate.css')}}">
+{%endblock%}
+
+{%block body%}
+<body>
+    <form action="#" method="post">
+      <input type="text" placeholder="Öğrenci Numarasını giriniz" name="student_no" required>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+{%endblock%}

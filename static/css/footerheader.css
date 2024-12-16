@@ -1,0 +1,525 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #1f3cd0;
+    --secondary-color: #D56828;
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --hover-bg-color: #f0f0f0;
+    --hover-text-color: #1f3cd0;
+    --menu-bg-color: #dfe2ee;
+    --border-color: #e0e0e0;
+    --overlay-color: rgba(255, 255, 255, 0.8);
+    --ituro-color: #D56828;
+    --footer-text-color: #ffffff;
+    --page-icon-color: #e67e22;
+    --header-text-color: #ffffff;
+}
+
+.dark-mode {
+    --primary-color: #161723;
+    --secondary-color: #7c97ff;
+    --background-color: #1b1b1f;
+    --text-color: #eef0f6;
+    --hover-bg-color: #3a3a3f;
+    --hover-text-color: #7c97ff;
+    --menu-bg-color: #1a1a2b;
+    --border-color: #3a3a3f;
+    --overlay-color: rgba(10, 10, 12, 0.9);
+    --ituro-color: #D56828;
+    --footer-text-color: #A9A9A9;
+    --page-icon-color: rgb(247, 231, 51);
+    --header-text-color: #ffffff;
+}
+
+/* Genel sayfa stili */
+body {
+    font-family: 'Poppins', 'Segoe UI', 'Arial', sans-serif;
+    margin: 0;
+    padding: 65px 0;
+    position: relative;
+    min-height: 100vh;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-image: url('/static/logos/svg4.svg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Sayfa arka plan örtüsü */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--overlay-color);
+    z-index: -1;
+}
+
+/* Header stili */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 20px;
+    background-color: var(--primary-color);
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 0.5px solid var(--secondary-color);
+}
+
+/* Header logo stili */
+.header-logo {
+    height: 40px;
+    width: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.header-logo:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+/* Menü stili */
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--menu-bg-color);
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 100px;
+    height: 100vh;
+    padding: 100px 0px 0px;
+    z-index: 999;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    overscroll-behavior: contain;
+    border-right: 0.5px solid var(--border-color);
+}
+
+.menu.active {
+    left: 0;
+}
+
+/* Menü linkleri stili */
+.menu a {
+    padding: 15px 20px 15px 15px;
+    text-decoration: none;
+    color: var(--text-color);
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1.1em;
+    margin: 0;
+    border-bottom: 0.5px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.menu a:hover {
+    background-color: var(--hover-bg-color);
+    color: var(--hover-text-color);
+    border-bottom-color: var(--hover-text-color);
+}
+
+/* Add this new style for the chevron icon */
+.menu a i.fa-chevron-right {
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.menu a:hover i.fa-chevron-right {
+    transform: translateX(5px);
+}
+
+/* Alt menü stili */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: var(--menu-bg-color);
+    padding: 10px;
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0 5px 5px 0;
+    width: 150px;
+    border-left: 0.5px solid var(--border-color);
+}
+
+.submenu.active {
+    display: block;
+}
+
+.submenu a {
+    padding: 10px;
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.submenu a:last-child {
+    border-bottom: none;
+}
+
+.submenu a:hover {
+    background-color: var(--hover-bg-color);
+    color: var(--hover-text-color);
+    border-bottom-color: var(--hover-text-color);
+}
+
+/* Header ikonları stili */
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.header-icon {
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--header-text-color);
+    margin-left: 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.header-icon:hover {
+    transform: scale(1.2);
+    color: var(--secondary-color);
+}
+
+/* Hamburger menü ikonu stili */
+.hamburger {
+    display: block;
+    margin-right: 15px;
+}
+
+.hamburger:hover, .hamburger.active {
+    color: rgb(247, 231, 51);
+    transform: scale(1.2) rotate(180deg);
+}
+
+.dark-mode .hamburger:hover, .dark-mode .hamburger.active {
+    color: #a6f5ad;
+}
+
+.hamburger:active {
+    transform: scale(0.9) rotate(180deg);
+}
+
+/* Karanlık mod geçiş ikonu stili */
+.dark-mode-toggle {
+    position: relative;
+    width: 22px;
+    height: 22px;
+}
+
+.dark-mode-toggle i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease;
+}
+
+.dark-mode-toggle .fa-sun {
+    opacity: 1;
+}
+
+.dark-mode-toggle .fa-moon {
+    opacity: 0;
+}
+
+.dark-mode .dark-mode-toggle .fa-sun {
+    opacity: 0;
+}
+
+.dark-mode .dark-mode-toggle .fa-moon {
+    opacity: 1;
+}
+
+/* Footer stili */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--header-text-color);
+    padding: 15px 20px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: auto;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    border-top: 0.5px solid var(--secondary-color);
+    box-sizing: border-box;
+}
+
+/* Footer linkleri stili */
+.footer a {
+    color: var(--header-text-color);
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--header-text-color);
+}
+
+/* Footer sosyal medya ikonları stili */
+.footer-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--header-text-color);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-icon:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+/* Footer metin stili */
+.footer-text {
+    font-weight: 500;
+    font-size: 0.9em;
+    text-align: center;
+    opacity: 0.8;
+    color: var(--footer-text-color);
+    transition: color 0.3s ease;
+    margin-top: 10px;
+}
+
+.footer-text:hover {
+    color: #ffffff;
+}
+
+/* Footer ikonları konumlandırma */
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+/* Mobil cihazlar için medya sorgusu */
+@media (max-width: 899px) {
+    body {
+        background-image: none;
+    }
+    body::before {
+        background: var(--background-color);
+    }
+    .header {
+        height: 70px;
+        padding: 10px 15px;
+    }
+    .header-logo {
+        height: 35px;
+        margin: 0 auto;
+    }
+    .hamburger {
+        font-size: 24px;
+    }
+    .menu {
+        width: 50%;
+        max-width: 300px;
+    }
+    .menu a {
+        font-size: 1.0em;
+        padding: 32px 20px;
+    }
+    .footer {
+        padding: 20px 0;
+    }
+    .footer-icon {
+        width: 35px;
+        height: 35px;
+    }
+    .footer-icons {
+        margin-bottom: 15px;
+    }
+    .footer-icons a {
+        margin: 0 8px;
+    }
+    .footer-text {
+        font-size: 0.8em;
+        line-height: 1.4;
+    }
+}
+
+/* ITURO link style */
+.menu a.ituro-link {
+    background-color: var(--ituro-color);
+    color: var(--footer-text-color);
+}
+
+.menu a.ituro-link:hover {
+    background-color: var(--secondary-color);
+    color: var(--header-text-color);
+}
+
+/* Desktop menu styles */
+.desktop-menu {
+    display: none;
+}
+
+@media (min-width: 900px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        height: 70px;
+    }
+
+    .desktop-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+        margin-left: -40px;
+    }
+
+    .desktop-menu a {
+        color: var(--header-text-color);
+        text-decoration: none;
+        padding: 20px 20px;
+        margin: 0 10px;
+        font-size: 1.1em;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        border-bottom: 2px solid transparent;
+    }
+
+    .desktop-menu a:hover {
+        background-color: var(--hover-bg-color);
+        color: var(--hover-text-color);
+        border-bottom-color: var(--hover-text-color);
+    }
+
+    .desktop-menu .has-submenu {
+        position: relative;
+    }
+
+    .desktop-menu .has-submenu i {
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+    }
+
+    .desktop-menu .has-submenu.active i {
+        transform: rotate(180deg);
+    }
+
+    /* ITURO link style for desktop */
+    .desktop-menu a.ituro-link {
+        background-color: var(--ituro-color);
+        color: var(--header-text-color);
+        padding: 10px 15px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .desktop-menu a.ituro-link:hover {
+        background-color: var(--secondary-color);
+        color: var(--header-text-color);
+        transform: scale(1.05);
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .header-icons {
+        margin-left: auto;
+    }
+
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        height: 60px;
+    }
+
+    .footer-text {
+        margin-top: 0;
+        text-align: left;
+    }
+
+    .footer-icons {
+        margin-bottom: 0;
+    }
+}
+
+/* Submenu styles for desktop */
+@media (min-width: 900px) {
+    .submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--primary-color);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 5px 5px;
+        width: 200px;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+        border: 1px solid var(--secondary-color);
+        opacity: 0.6;
+        border: 1px solid var(--secondary-color);
+    }
+
+    .submenu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .submenu a {
+        color: var(--header-text-color);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .submenu a:hover {
+        background-color: var(--hover-bg-color);
+        color: var(--hover-text-color);
+    }
+}
+
+/* Adjust header for desktop view */
+@media (min-width: 900px) {
+    .header {
+        justify-content: flex-start;
+    }
+
+    .header-icons {
+        margin-left: auto;
+    }
+}

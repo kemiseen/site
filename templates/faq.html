@@ -1,0 +1,59 @@
+{%extends "base.html"%}
+{%block title%}
+<title>Sıkça Sorulan Sorular</title>
+{%endblock%}
+
+{%block link%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/faq.css')}}">
+{%endblock%}
+
+{%block body%}
+
+    <div class="faq-container">
+        <h1>Frequently Asked Questions</h1>
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleAnswer(event)">What is your return policy?<span class="arrow down"><i class="fas fa-chevron-down"></i></span></button>
+            <div class="faq-answer">
+                <p>Our return policy allows you to return products within 30 days of purchase. Please ensure the items are in their original condition.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleAnswer(event)">How do I track my order?<span class="arrow down"><i class="fas fa-chevron-down"></i></span></button>
+            <div class="faq-answer">
+                <p>You can track your order using the tracking number provided in your order confirmation email. Visit our tracking page and enter the tracking number.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleAnswer(event)">Do you offer international shipping?<span class="arrow down"><i class="fas fa-chevron-down"></i></span></button>
+            <div class="faq-answer">
+                <p>Yes, we offer international shipping to many countries. Shipping fees and delivery times vary depending on the destination.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleAnswer(event)">How can I contact customer support?<span class="arrow down"><i class="fas fa-chevron-down"></i></span></button>
+            <div class="faq-answer">
+                <p>You can contact our customer support team via email at support@example.com or call us at (123) 456-7890. We are available Monday to Friday, 9 AM to 5 PM.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        function toggleAnswer(event) {
+            var answer = event.target.nextElementSibling;
+            var arrow = event.target.querySelector('.arrow');
+            if (answer.style.display === 'block') {
+                answer.style.animation = 'slideUp 0.15s ease forwards';
+                setTimeout(function() {
+                    answer.style.display = 'none';
+                }, 150);
+                arrow.classList.remove('up');
+                arrow.classList.add('down');
+            } else {
+                answer.style.display = 'block';
+                answer.style.animation = 'slideDown 0.15s ease forwards';
+                arrow.classList.remove('down');
+                arrow.classList.add('up');
+            }
+        }
+    </script>
+{%endblock%}
