@@ -325,6 +325,13 @@ body::before {
     margin-bottom: 10px;
     flex-wrap: wrap;
 }
+#otokon_svg_a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 /* Mobil cihazlar için medya sorgusu */
 @media (max-width: 899px) {
