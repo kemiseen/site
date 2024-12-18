@@ -30,6 +30,6 @@ button:hover {
     border-bottom-color: var(--hover-text-color);
   }
 button a{
-    color: var(--background-color);
+    color: #ffffff;
     text-decoration: none;
   }
