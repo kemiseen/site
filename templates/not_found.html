@@ -1,4 +1,19 @@
 {%extends "base.html"%}
+{%block title%}
+<title>Sertifanı Al</title>
+{%endblock%}
+{%block link%}
+<link rel="stylesheet" href="{{url_for('static', filename='css/not_found.css')}}">
+{%endblock%}
 {%block body%}
-<h1>Girdiğiniz Öğrenci numarasına sahip sertifika bulamadık. Doğru girdiğinden emin misin ?</h1>
+<body>
+    <div>
+
+        <h1>Girdiğiniz Öğrenci numarasına sahip sertifika bulamadık. Doğru girdiğinden emin misin ?</h1>
+    </div>
+    <div>
+        <button><a href="certificate.html">Tekrar Dene</a></button>
+
+    </div>
+</body>
 {%endblock%}

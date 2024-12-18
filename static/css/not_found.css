@@ -1,0 +1,36 @@
+body {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding-left: 140px;
+    padding-right: 140px;
+    font-size: 0.80rem;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    flex-direction: column;
+  }
+
+button {
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+button:hover {
+    background-color: var(--secondary-color);
+    color: var(--header-text-color);
+      border-bottom-color: var(--hover-text-color);
+  }
+button a{
+    color: #ffffff;
+    text-decoration: none;
+  }
